@@ -4,22 +4,14 @@ import {nanoid} from "nanoid"
 dotenv.config();
 import filecabinet from "./src/config/mongo.config.js"
 import short_url from "./src/routes/short_url.route.js"
+import { redirectFromShortUrl } from "./src/controller/short_url.controller.js";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.use("/api/create", short_url);
-
-// app.get("/:id", async (req, res) => {
-//     const {id} = req.params;
-//     const url = await urlSchema.findOne({short_url: id});
-//     if (url) {
-//          res.redirect(url.full_url);
-//     } else {
-//          res.status(404).json("URL not found");
-//     }
-// })
+app.use("/api", short_url)
+app.get("/:id", redirectFromShortUrl)
 
 
 app.listen(5000, () => {
