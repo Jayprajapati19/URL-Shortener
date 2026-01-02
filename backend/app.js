@@ -19,6 +19,7 @@ app.use(cors({
     credentials: true // 👈 this allows cookies to be sent
 }));
 
+
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())

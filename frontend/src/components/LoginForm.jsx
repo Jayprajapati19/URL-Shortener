@@ -5,8 +5,8 @@ import { login } from '../store/slice/authSlice.js';
 import { useNavigate } from '@tanstack/react-router';
 
 const LoginForm = ({ state }) => {
-    const [email, setEmail] = useState('jayp37679"gmail.com');
-    const [password, setPassword] = useState('password123');
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const navigate = useNavigate()
@@ -49,7 +49,7 @@ const LoginForm = ({ state }) => {
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="email"
                         type="email"
-                        placeholder="Email"
+                        placeholder="Enter your Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -64,7 +64,7 @@ const LoginForm = ({ state }) => {
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="password"
                         type="password"
-                        placeholder="******************"
+                        placeholder="Enter password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
