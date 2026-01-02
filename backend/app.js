@@ -1,5 +1,4 @@
 import express from "express";
-import {nanoid} from "nanoid"
 import dotenv from "dotenv"
 import connectDB from "./src/config/monogo.config.js"
 import short_url from "./src/routes/short_url.route.js"
@@ -11,7 +10,7 @@ import cors from "cors"
 import { attachUser } from "./src/utils/attachUser.js";
 import cookieParser from "cookie-parser"
 
-dotenv.config("./.env")
+dotenv.config()
 
 const app = express();
 
